@@ -1,6 +1,6 @@
 -- Deliverable 1
 
--- Retiree Title Table
+-- Retirement Title Table
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
