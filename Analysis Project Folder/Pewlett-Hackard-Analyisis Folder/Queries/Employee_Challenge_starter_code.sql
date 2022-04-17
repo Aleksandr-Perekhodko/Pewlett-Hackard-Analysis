@@ -2,11 +2,11 @@
 
 -- Retiree Title Table
 SELECT e.emp_no,
-		e.first_name,
-		e.last_name,
-		t.title,
-		t.from_date,
-		t.to_date
+	e.first_name,
+	e.last_name,
+	t.title,
+	t.from_date,
+	t.to_date
 INTO retirement_titles
 FROM employees AS e
 INNER JOIN titles AS t
@@ -17,9 +17,9 @@ ORDER BY emp_no ASC;
 -- Unique Title Table
 -- Use Dictinct with Orderby to remove duplicate rows
 SELECT DISTINCT ON (emp_no) emp_no,
-first_name,
-last_name,
-title
+	first_name,
+	last_name,
+	title
 INTO unique_titles
 FROM retirement_titles
 ORDER BY emp_no, title DESC;
@@ -35,11 +35,11 @@ ORDER BY COUNT(title) DESC;
 
 -- Mentorship Eligibility Table
 SELECT DISTINCT ON(e.emp_no) e.emp_no, 
-    e.first_name, 
-    e.last_name, 
-    e.birth_date,
-    de.from_date,
-    de.to_date,
+	e.first_name, 
+	e.last_name, 
+	e.birth_date,
+	de.from_date,
+	de.to_date,
    	t.title
 INTO mentorship_eligibilty
 FROM employees as e
